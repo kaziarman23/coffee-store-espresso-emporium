@@ -1,7 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router";
 import CoffeeCard from "./components/CoffeeCard";
 import { useState } from "react";
-import Navbar from "./components/Share/Navbar";
 import Hero from "./components/Hero";
 import popularBg from "./assets/more/popularBg.png";
 import { GiCoffeeCup } from "react-icons/gi";
@@ -60,14 +59,12 @@ const App = () => {
 
   return (
     <div>
-      <header className="w-full h-16 fixed top-0 left-0 z-50">
-        <Navbar />
-      </header>
-      <div className="w-full h-[875px] mt-16">
+      <div className="w-full h-[875px]">
         <Hero />
       </div>
 
-      <popularSection
+      {/* coffee section */}
+      <div
         className="w-full h-auto my-10"
         style={{
           backgroundImage: `url(${popularBg})`,
@@ -99,14 +96,16 @@ const App = () => {
             ></CoffeeCard>
           ))}
         </div>
-      </popularSection>
+      </div>
 
       {/* instagram section */}
-      <section className="w-full h-[800px] mt-32">
+      <div className="w-full h-[600px] mt-32">
         <div className="w-4/5 h-full mx-auto">
           <div className="flex flex-col justify-center items-center">
             <p className="font-Raleway text-sm">Follow us Now</p>
-            <h1 className="font-real text-[#331A15] text-3xl">Follow on Instagram</h1>
+            <h1 className="font-real text-[#331A15] text-3xl">
+              Follow on Instagram
+            </h1>
           </div>
           <div className="w-4/5 my-10 mx-auto grid md:grid-cols-4 gap-3">
             {instaImages.map((cup) => (
@@ -120,9 +119,7 @@ const App = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      <footer></footer>
+      </div>
     </div>
   );
 };

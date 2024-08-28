@@ -31,9 +31,10 @@ const Hero = () => {
       text: "Your coffee is brewed by first roasting the green coffee beans",
     },
   ];
+
   return (
     <div className="w-full h-full">
-      <div className="w-full h-[575px] relative">
+      <div className="w-full h-screen relative">
         <img
           src={heroBg}
           alt="hero section img"
@@ -57,7 +58,7 @@ const Hero = () => {
         <div className="w-4/5 h-full mx-auto flex justify-center items-center gap-3">
           {specialtys.map((special) => (
             <div key={special.id} className="w-full h-full">
-              <img src={special.logo} alt={special.title} className="mt-14"/>
+              <img src={special.logo} alt={special.title} className="mt-14" />
               <h1 className="font-real text-2xl my-3">{special.title}</h1>
               <p className="font-Raleway text-sm">{special.text}</p>
             </div>

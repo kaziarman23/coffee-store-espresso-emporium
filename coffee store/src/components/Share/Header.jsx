@@ -1,10 +1,10 @@
 import navBg from "../../assets/more/navBg.jpg";
 import navLogo from "../../assets/more/navLogo.png";
 
-const Navbar = () => {
+const Header = () => {
   return (
     <div
-      className="w-full h-full flex justify-center items-center gap-4"
+      className="w-full h-12 flex justify-center items-center gap-4"
       style={{
         backgroundImage: `url(${navBg})`,
         backgroundRepeat: "no-repeat",
@@ -16,4 +16,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

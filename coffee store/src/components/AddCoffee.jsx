@@ -1,7 +1,10 @@
 import { TiArrowLeftThick } from "react-icons/ti";
+import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
+  const navigate = useNavigate();
+
   const handleAddCoffee = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -45,11 +48,17 @@ const AddCoffee = () => {
       });
   };
 
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <div className="w-full h-auto">
-      {/* Navbar component */}
       <div className="w-4/5 h-[705px] mx-auto my-20">
-        <button className="font-bold mb-5 flex items-center">
+        <button
+          onClick={handleClick}
+          className="w-32 h-8 border-none mb-5 flex items-center font-real cursor-pointer text-2xl"
+        >
           <TiArrowLeftThick /> Back to home
         </button>
         <div className="w-full h-auto bg-[#F4F3F0]">
@@ -57,7 +66,7 @@ const AddCoffee = () => {
             <h1 className="font-real font-bold text-2xl text-black text-shadow-black-glow mt-10">
               Add New Coffee
             </h1>
-            <p className="text-sm mx-20">
+            <p className="text-sm mx-20 font-Raleway">
               It is a long established fact that a reader will be distraceted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
@@ -78,7 +87,7 @@ const AddCoffee = () => {
                   id="name"
                   name="name"
                   placeholder="Enter Coffee name"
-                  className="mt-2 p-3 w-full rounded-md"
+                  className="w-4/5 mt-2 p-3 rounded-md"
                 />
               </div>
               <div className="w-1/2">
@@ -91,7 +100,7 @@ const AddCoffee = () => {
                   id="chef"
                   name="chef"
                   placeholder="Enter Coffee Chef"
-                  className="mt-2 p-3 w-full rounded-md"
+                  className="mt-2 p-3 w-4/5 rounded-md"
                 />
               </div>
             </div>
@@ -107,7 +116,7 @@ const AddCoffee = () => {
                   id="supplier"
                   name="supplier"
                   placeholder="Enter Coffee Supplier"
-                  className="mt-2 p-3 w-full rounded-md"
+                  className="mt-2 p-3 w-4/5 rounded-md"
                 />
               </div>
               <div className="w-1/2">
@@ -120,7 +129,7 @@ const AddCoffee = () => {
                   id="teast"
                   name="teast"
                   placeholder="Enter Coffee Teast"
-                  className="mt-2 p-3 w-full rounded-md"
+                  className="mt-2 p-3 w-4/5 rounded-md"
                 />
               </div>
             </div>
@@ -136,7 +145,7 @@ const AddCoffee = () => {
                   id="cetagory"
                   name="cetagory"
                   placeholder="Enter Coffee Cetagory"
-                  className="mt-2 p-3 w-full rounded-md"
+                  className="mt-2 p-3 w-4/5 rounded-md"
                 />
               </div>
               <div className="w-1/2">
@@ -149,11 +158,11 @@ const AddCoffee = () => {
                   id="details"
                   name="details"
                   placeholder="Enter Coffee details"
-                  className="mt-2 p-3 w-full"
+                  className="mt-2 p-3 w-4/5"
                 />
               </div>
             </div>
-            <div className="mb-5">
+            <div className="w-full mb-5">
               <label htmlFor="photo" className="text-xl">
                 Photo
               </label>
@@ -170,7 +179,7 @@ const AddCoffee = () => {
               <input
                 type="submit"
                 value="Add Coffee"
-                className="w-full h-10 mb-10 bg-orange-500 cursor-pointer"
+                className="w-2/5 h-10 mb-10 bg-orange-500 cursor-pointer"
               />
             </div>
           </form>
