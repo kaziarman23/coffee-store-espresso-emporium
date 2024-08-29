@@ -37,13 +37,15 @@ const Users = () => {
     });
   };
   return (
-    <div className="w-full h-screen"
-    style={{
+    <div
+      className="w-full h-screen"
+      style={{
         backgroundImage: `url(${userListImg})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
-    }}>
+      }}
+    >
       <div className="w-4/5 h-auto mx-auto my-10">
         <h1 className="font-real text-center">
           Users number is : {loadedUsersData.length}
@@ -56,6 +58,7 @@ const Users = () => {
                   <th>Sl:</th>
                   <th>Email</th>
                   <th>Created At</th>
+                  <th>LastLogged At</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -65,6 +68,7 @@ const Users = () => {
                     <th>{index + 1}</th>
                     <td>{user.email}</td>
                     <td>{user.createdAt}</td>
+                    <td>{user.lastLoggedAt}</td>
                     <td>
                       <button
                         onClick={() => handleDelete(user._id)}

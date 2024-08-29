@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp.jsx";
 import SignIn from "./components/SignIn.jsx";
 import AuthProvider from "./components/Auth/AuthProvider.jsx";
 import Users from "./components/Users.jsx";
+import Display from "./components/Display.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +33,15 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/coffee/${params.id}`),
       },
       {
+        path: "/display/:id",
+        element: <Display />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffee/${params.id}`),
+      },
+      {
         path: "/users",
         element: <Users />,
-        loader: () => fetch("http://localhost:5000/user")
+        loader: () => fetch("http://localhost:5000/user"),
       },
       {
         path: "/signup",
