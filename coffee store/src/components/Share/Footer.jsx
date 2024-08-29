@@ -9,8 +9,28 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 const Footer = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendMessage = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "You'r Message send successfully",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+  };
+
   return (
     <div
       className="w-full h-auto overflow-hidden"
@@ -73,24 +93,35 @@ const Footer = () => {
               type="text"
               name="name"
               placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="p-2 rounded-md"
             />
             <input
               type="email"
               name="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="p-2 rounded-md"
             />
             <textarea
               rows={5}
               cols={20}
               placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="p-2 rounded-lg"
               name="textaria"
               maxLength={100}
             />
           </div>
-          <button className="ml-10 border rounded-xl p-2">Send Message</button>
+          <button
+            onClick={handleSendMessage}
+            className="ml-10 border rounded-xl p-2 cursor-pointer hover:bg-black hover:text-white" 
+          >
+            Send Message
+          </button>
         </div>
       </div>
       <div
@@ -102,7 +133,9 @@ const Footer = () => {
           backgroundSize: "cover",
         }}
       >
-        <h1 className="font-real text-xl text-white">Copyright Espresso Emporium ! All Rights Reserved</h1>
+        <h1 className="font-real text-xl text-white">
+          Copyright Espresso Emporium ! All Rights Reserved
+        </h1>
       </div>
     </div>
   );
