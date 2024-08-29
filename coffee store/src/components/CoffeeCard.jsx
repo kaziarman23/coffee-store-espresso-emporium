@@ -51,19 +51,20 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         </div>
         <div className="join join-vertical pr-4">
           <button className="btn join-item bg-[#D2B48C]" title="View">
-            <GoEye />
+            <GoEye className="text-white hover:text-black hover:py-2" />
           </button>
-          <Link to={`/updateCoffee/${_id}`}>
-            <button className="btn join-item bg-[#3C393B] " title="Update">
-              <FaPen />
-            </button>
-          </Link>
+
+          <button className="btn join-item bg-[#3C393B] " title="Update">
+            <Link to={`/updateCoffee/${_id}`}>
+              <FaPen className="text-white hover:text-black hover:py-2"/>
+            </Link>
+          </button>
           <button
             onClick={() => handleDelete(_id)}
             className="btn join-item bg-[#EA4744]"
             title="Delete"
           >
-            <MdDelete />
+            <MdDelete className="text-white hover:text-black hover:py-2" />
           </button>
         </div>
       </div>

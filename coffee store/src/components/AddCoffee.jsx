@@ -44,6 +44,7 @@ const AddCoffee = () => {
             confirmButtonText: "Cool",
           });
           form.reset();
+          navigate("/");
         }
       });
   };
